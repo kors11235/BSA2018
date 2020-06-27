@@ -1,0 +1,59 @@
+<div class="userWrp">
+    <form class="user-info" id="userInfo" name="editForm" (submit)="saveChanges($event)">
+      <div class="img"><i class="fas fa-user-tie"></i></div>
+      
+      <p class="user-info-value">
+        <b>Name: </b> <input id="userName" placeholder="{{name}}">
+      </p>
+      <p class="user-info-value">
+        <b>Lastname: </b> <input id="userLastname" placeholder="{{lastname}}">
+      </p>
+      <p class="user-info-value">
+        <b>Birthday: </b> 
+          <input 
+            type="number" 
+            name="editYear"
+            [(ngModel)] = "user.year"
+            id="userYear" 
+            placeholder="{{year}}"
+            pattern = "^$|^([1][9][0-9][0-9]|[2][0][0-1][0-9])?"
+            #yearInput="ngModel">
+            <label class="errorMessage" *ngIf="yearInput.errors && yearInput.errors.pattern && yearInput.dirty">
+                U couldnt born that time
+              </label>
+      </p>
+      <p class="user-info-value">
+        <b>Email: </b>
+          <input 
+            type="email" 
+            id="userEmail" 
+            name="editEmail"
+            placeholder="{{email}}"
+            [(ngModel)] = "user.email"
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            #emailInput="ngModel">
+            <label class="errorMessage" *ngIf="emailInput.errors && emailInput.errors.pattern && emailInput.dirty">
+                Wrong format
+              </label>
+              <label class="errorMessage" *ngIf="!emailValidation()">
+                Email is already exists
+              </label>
+      </p>
+      <p class="user-info-value password">
+        <b>Password: </b> 
+          <input 
+            type="password" 
+            id="userPassword" 
+            name="editPassword"
+            placeholder="New password"
+            [(ngModel)] = "user.password"
+            minlength="3"
+            #passwordInput="ngModel">
+            <label class="errorMessage" *ngIf="passwordInput.errors && passwordInput.errors.minlength">
+                More than 3 symbols required
+              </label>
+      </p>
+      <button type="submit" class="editBtn"><i class="fas fa-save"></i> Save</button>
+    </form>
+  
+</div>

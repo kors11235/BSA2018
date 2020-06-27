@@ -1,0 +1,13 @@
+.forgotPassword {
+	padding: 0;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	color: #aaa;
+	cursor: pointer;
+	transition: 0.4s ease;
+}
+
+.forgotPassword:hover {
+	color: rgb(154, 163, 212);
+}

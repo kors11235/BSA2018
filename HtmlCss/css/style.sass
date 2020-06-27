@@ -1,0 +1,418 @@
+// COLORS
+$black: #1E232D
+$blue: #495060
+$green: #58A4B0
+$light-blue: #8B9AAB
+$light: #D8DBE2
+
+*
+	box-sizing: border-box
+body
+	max-width: 1200px
+	width: 90%
+	margin: 0 auto
+	padding: 0
+	font-family: 'Montserrat', sans-serif
+	box-shadow: 0 1px 116px 0 $light, 0 1px 116px 0 $light
+
+@keyframes spin 
+	100% 
+		-webkit-transform: rotate(360deg)
+		transform: rotate(360deg)
+
+// GENERAL
+a
+	text-decoration: none
+button
+	cursor: pointer
+	border: none
+	outline: none
+	font-family: 'Montserrat', sans-serif
+	font-weight: 400
+	transition: 0.6s ease
+input
+	border: none
+	outline: none
+	font-family: 'Montserrat', sans-serif	
+	transition: 0.6s ease
+h2
+	font-size: 16pt
+	text-align: center
+	margin: 0
+	margin-bottom: 10px
+	padding: 5px 0
+	font-weight: 600
+h3
+	font-size: 12pt
+	font-weight: 600
+	margin: 0
+ul li
+	list-style: none
+.help_wrp
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	padding: 0 2%
+	margin-bottom: 30px
+// ---------------------------------------------------------
+
+
+header
+	background-color: $black
+	position: relative
+	padding-bottom: 60px
+	svg
+		position: absolute
+		bottom: 0
+.header_wrp
+	padding: 4%
+	display: grid
+	justify-content: space-between
+	grid-template-columns: 34% 50%
+	grid-template-rows: 50% 50%
+.logo
+	grid-row: 1/3
+	min-height: 100px
+	font-size: 3.2em
+	font-weight: 100
+	color: #fff
+	position: relative
+	text-align: center
+	background: url(../img/logo_img/galaxy-svgrepo-com.svg) no-repeat
+	background-position: center
+	background-size: 95px
+	line-height: 100px
+	white-space: nowrap
+	cursor: pointer
+	transition: 0.6s ease
+	span
+		font-weight: 700
+	img.logo_galaxy
+		width: 2em
+		position: absolute
+		left: 50%
+		margin-left: -1em
+		top: 0
+		z-index: 10
+	img.logo_planet
+		width: 0.9em
+		position: relative
+		bottom: -0.1em
+		animation: spin 24s linear infinite
+.logo:hover
+	background-size: 100px
+.logo:hover img.logo_planet
+	animation: spin 4s linear infinite
+
+.icons
+	display: flex
+	justify-content: flex-end
+	font-size: 1.5em
+	i
+		color: $light
+		margin-left: 15px
+		transition: 0.6s ease
+.social
+	display: flex
+	align-items: flex-end
+	i
+		color: $blue
+	i:hover
+		transform: scale(1.1)
+.search
+	display: flex
+	position: relative
+	align-items: flex-end
+	#search
+		width: 0
+		height: 2em
+		background-color: transparent
+		border-bottom: 0.5px solid $blue
+		color: $light
+		margin-left: 60px
+		// display: none
+		border-radius: 10px
+		transform-origin: 0% 0%
+		transform: translateX(0px)
+	#search_check
+		position: absolute
+		right: 0
+		height: 30px
+		width: 30px
+		margin: 0
+		opacity: 0
+		z-index: 60
+		cursor: pointer
+	input:checked ~ button
+		background-color: transparent
+	input:checked ~ #search
+		// display: block
+		width: 200px
+		margin-left: 15px
+		transform: translateX(0)
+
+	button
+		margin-left: 30px
+		position: absolute
+		right: 0
+		i
+			margin: 0
+			font-size: 1.2em
+		height: 30px
+		width: 30px
+		background-color: $green
+		border-radius: 5px
+	input:focus
+		border-bottom: 0.5px solid $green
+
+.search:hover button
+	transform: scale(1.1)
+.search:hover button i
+	transform: rotate(90deg)
+
+// NAVIGATION MENU
+nav
+	a
+		color: $light
+		margin-left: 1em
+		transition: 0.6s ease
+	a:hover
+		color: $green
+	span, input[type='checkbox']
+		display: none
+	ul
+		display: flex
+		justify-content: flex-end
+		flex-wrap: wrap
+		padding: 0
+	
+// ---------------------------------------------------------
+
+
+// ARTICLES (CONTENT)
+main
+	background-color: #fff
+	display: flex
+	flex-wrap: wrap
+	padding: 4%
+.content
+	width: 70%
+	display: grid
+	// Крайние карточки слева и справа должны прижиматься к левому и правому
+	//  краям контейнера соответственно. Расстояние между карточками должно 
+	//  быть статическим.
+	grid-column-gap: 10px
+	grid-row-gap: 10px
+	// Количество карточек в одном ряду не фиксировано, 
+	// зависит от свободного пространства.
+	grid-template-columns: repeat(auto-fill, calc(50% - 5px))
+	justify-content: space-between
+.article
+	// Но ширина карточек должна быть относительно резиновая, т.е. 
+	// в пределах каких-то минимальных/максимальных размеров, но не жестко 
+	// фиксированная.
+	max-width: 350px
+	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 6px 0 rgba(0, 0, 0, 0.05)
+	position: relative
+	.article_img
+		overflow: hidden
+	.article_text
+		padding: 2%
+		padding-bottom: 25px
+	img
+		width: 100%
+		height: 200px
+		transition: 0.6s ease
+	h1
+		font-size: 1.2em
+		font-weight: 600
+		a
+			color: $black
+			transition: 0.6s ease
+		a:hover
+			color: $blue
+	.date,
+	.article_extr
+		font-size: 0.8em
+		color: $light-blue
+	.article_extr
+		display: flex
+		justify-content: space-between
+		position: absolute
+		bottom: 2%
+		width: 96%
+	.rate:after
+		font-family: "Font Awesome 5 Free"
+		content: "\f005"
+// При наведении на карточку необходимо, чтобы у фото был эффект 
+// приближения (зумирования).
+.article:hover img
+		transform: scale(1.2)
+
+
+// ---------------------------------------------------------
+// SIDEBAR		
+aside
+	width: calc(30% - 10px)
+	border-left: 0px solid $light
+	margin-left: 10px
+	background: linear-gradient(to top, #fff, #E6E8EC, #fff)
+	input::placeholder
+		font-family: 'Montserrat', sans-serif
+		color: $light-blue
+		font-weight: 300
+	input
+		width: 100%
+		border-bottom: 0.5px solid $light-blue
+		height: 30px
+		border-radius: 10px
+		padding: 0 2%
+		background: transparent
+
+// блок информации о авторе (фото, имя, краткое описание)
+.author
+	img
+		width: 75px
+		height: 65px
+		margin-right: 20px
+		float: left
+	.help_wrp
+		justify-content: space-between
+	h3
+		width: calc(100% - 95px)
+		span
+			font-size: 10pt
+			color: $light-blue
+			font-weight: 300
+			word-break: break-all
+
+	p
+		font-style: italic
+		font-weight: 400
+		text-align: justify
+		width: 100%
+		color: $blue
+		margin: 0
+// блок социальных иконок
+.social_aside
+	.help_wrp
+		justify-content: center
+	.social	
+		font-size: 1.8em
+		i
+			color: $blue
+			margin: 0 8px
+			transition: 0.6s ease
+		i:hover
+			color: $green
+// блок subscribe (имя, email, кнопка на всю ширину)
+.subscribe
+	button
+		width: 100%	
+		background-color: $green
+		margin-top: 10px
+		padding: 10px
+		color: #fff
+		border-radius: 10px
+	input:focus
+		border-bottom: 0.5px solid $blue
+	button:hover
+		transform: scale(1.01)
+		background-color: $blue
+// блок поиска на всю ширину (поле поиска и прижатая к нему справа 
+// кнопка поиска с иконкой).
+.search_aside
+	button
+		width: 30px
+		height: 30px
+		margin: 0
+		position: absolute
+		right: 2%
+		border-radius: 0 10px 10px 0 
+		i
+			transition: 0.6s ease
+			color: #fff
+	button:hover
+		transform: none
+		background-color: transparent
+	button:hover i
+		color: $black
+	input
+		margin: 0
+		display: block
+		width: 100%
+		color: $black
+
+	.help_wrp
+		position: relative
+		align-items: flex-end
+// блок тегов (теги следуют слева-направо и сверху-вниз, контент тегов 
+// по центру)
+.tags
+	.help_wrp
+		justify-content: center
+		padding: 0
+	span
+		background-color: $green
+		padding: 10px 5px
+		border-radius: 10px
+		margin: 3px
+		transition: 0.6s ease
+		cursor: pointer
+	a
+		color: #fff
+	span:hover
+		background-color: $blue
+// блок последних комментариев в две колонки
+.comment
+	display: grid
+	grid-template-columns: 65px calc(100% - 75px)
+	grid-gap: 10px
+	cursor: pointer
+	padding: 2%
+	transition: 0.6s ease
+	.comment_photo
+		width: 65px
+		height: 65px
+		background-color: $light
+		border-radius: 50%
+	img
+		width: 65px
+		height: 65px
+	h3
+		color: $blue
+	p
+		// Если комментарий не помещается, то он должен обрезаться и 
+		// заканчиваться тремя точками.
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+.comment:hover
+	background-color: $blue
+	color: #fff
+.comment:hover h3
+	color: #fff
+
+
+//--------------------------------------------------
+// FOOTER
+footer
+	background-color: $black
+	position: relative
+	padding-top: 60px
+	svg
+		position: absolute
+		top: 0
+		transform: scale(-1, -1)
+		top: -1px
+	.logo
+		transform: scale(0.6)
+	.cpr
+		text-align: center
+		color: $blue
+		padding: 20px 0
+	.info
+		padding: 0 8%
+		color: #fff
+		font-weight: 100
+		text-align: center

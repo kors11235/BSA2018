@@ -1,0 +1,7 @@
+<header *ngIf='isLogin'>
+  <div class="wrp">
+    <div class="userName"><a routerLink="user-profile"><i class="fas fa-user-tie"></i>{{name}}</a></div>
+    <div class="allUsers" (click)="showAllUsers()"><i class="fas fa-users"></i>All users</div>
+  </div>
+  <a routerLink="/" class="logoutBtn"><button (click)="logOut()">Log out  <i class="fas fa-sign-out-alt"></i></button></a>
+</header>

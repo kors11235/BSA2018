@@ -1,0 +1,43 @@
+<div class="allUsersWrp">
+
+  <div class="search">
+    <input type="search" id="searchUsers" [(ngModel)]="searchText" placeholder="Search">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <div class="sort">
+    <h3>Sort by:</h3>
+    <button>
+      Name 
+      <span (click)="ascSort('name')" class="asc"><i class="fas fa-arrow-up"></i></span>
+      <span (click)="descSort('name')" class="desc"><i class="fas fa-arrow-down"></i></span>
+      <span (click)="default()" class="desc"><i class="fas fa-arrows-alt-v"></i></span>
+    </button>
+    <button>
+      Lasname 
+      <span (click)="ascSort('lastname')" class="asc"><i class="fas fa-arrow-up"></i></span>
+      <span (click)="descSort('lastname')" class="desc"><i class="fas fa-arrow-down"></i></span>
+      <span (click)="default()" class="desc"><i class="fas fa-arrows-alt-v"></i></span>
+    </button>
+    <button>
+      Email 
+      <span (click)="ascSort('email')" class="asc"><i class="fas fa-arrow-up"></i></span>
+      <span (click)="descSort('email')" class="desc"><i class="fas fa-arrow-down"></i></span>
+      <span (click)="default()" class="desc"><i class="fas fa-arrows-alt-v"></i></span>
+    </button>
+    <button>
+      Year 
+      <span (click)="ascSort('year')" class="asc"><i class="fas fa-arrow-up"></i></span>
+      <span (click)="descSort('year')" class="desc"><i class="fas fa-arrow-down"></i></span>
+      <span (click)="default()" class="desc"><i class="fas fa-arrows-alt-v"></i></span>
+    </button>
+  </div>
+
+  <div id="allUsers" class="allUsers">
+    <div class="user" *ngFor="let user of users | filterPipe: searchText" (click)="viewUser(user.email)">
+      <h3 >{{user.name}} {{user.lastname}}</h3>
+      <p>Birthday: {{user.year}}</p>
+      <p>Email: {{user.email}}</p>
+    </div>
+  </div>
+</div>

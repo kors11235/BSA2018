@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	padding: 0
+}
+
+header {
+	background: linear-gradient(rgb(28, 34, 66), rgb(46, 58, 129));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 15px;
+	height: 85px;
+}
+
+.wrp {
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+.userName {
+	margin-right: 15px;
+	color: #ccc;
+	transition: 0.4s ease;
+	cursor: pointer;
+}
+
+.allUsers {
+	color: #ccc;
+	transition: 0.4s ease;
+	cursor: pointer;
+}
+
+.allUsers:hover, .userName:hover {
+	color: rgba(204, 204, 204, 0.5);
+}
+
+.allUsers:hover i, .userName:hover i {
+	transform: scale(1.1);
+	color: rgba(254, 254, 254, 0.5); 
+}
+
+.userName i, .allUsers i {
+	color: #ccc;
+	margin-right: 8px;
+	transition: 0.4s ease;
+}
+
+.logoutBtn button {
+	background: rgb(46, 58, 129);
+	border: none;
+	outline: none;
+	color: rgba(204, 204, 204, 0.5);
+	padding: 10px;
+	transition: 0.4s ease;
+	cursor: pointer;
+}
+
+.logoutBtn button i {
+	color: rgba(204, 204, 204, 0.5);
+}
+
+.logoutBtn button:hover {
+	background: transparent;
+}

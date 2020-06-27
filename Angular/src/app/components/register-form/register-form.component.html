@@ -1,0 +1,93 @@
+<form class="inputForm" id="registerForm" name="regForm" (submit)="registerUser($event)">
+
+    <div class="signin-signup">
+      <a routerLink="/login" class="">Sign in</a>
+      <a routerLink="/register" class="active">Sign Up</a>
+    </div>
+
+    <h2>Register</h2>
+
+    <div class="inputField">
+      <label for="userName">Name</label>
+      <label class="errorMessage" *ngIf="nameInput.errors && nameInput.errors.required && nameInput.dirty">
+        Name cant be empty
+      </label>
+      <input 
+        type="text" 
+        name="Name"
+        [(ngModel)]="user.name"
+        required
+        #nameInput="ngModel">
+    </div>
+  
+    <div class="inputField">
+      <label for="n">Lastname</label>
+      <label class="errorMessage" *ngIf="lastnameInput.errors && lastnameInput.errors.required && lastnameInput.dirty">
+        Lastname cant be empty
+      </label>
+      <input 
+        type="text" 
+        name="Lastname"
+        [(ngModel)] = "user.lastname"
+        required
+        #lastnameInput="ngModel">
+    </div>
+
+    <div class="inputField">
+      <label for="Email">Email</label>
+      <label class="errorMessage" *ngIf="emailInput.errors && emailInput.errors.required && emailInput.dirty">
+        Email cant be empty
+      </label>
+      <label class="errorMessage" *ngIf="emailInput.errors && emailInput.errors.pattern && emailInput.dirty">
+        Wrong format
+      </label>
+      <label class="errorMessage" *ngIf="!emailValidation() && emailInput.dirty">
+        Email is already exists
+      </label>
+      <input 
+        type="email" 
+        name="Email"
+        id="regEmail"
+        [(ngModel)] = "user.email"
+        required
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        #emailInput="ngModel">
+    </div>
+
+    <div class="inputField">
+      <label for="Birthday">Birthday (year)</label>
+      <label class="errorMessage" *ngIf="yearInput.errors && yearInput.errors.required && yearInput.dirty">
+        Birthday cant be empty
+      </label>
+      <label class="errorMessage" *ngIf="yearInput.errors && yearInput.errors.pattern && yearInput.dirty">
+        U couldnt born that time
+      </label>
+      <input 
+        type="number" 
+        name="Birthday"
+        [(ngModel)] = "user.year"
+        required
+        pattern = "^$|^([1][9][0-9][0-9]|[2][0][0-1][0-9])?"
+        #yearInput="ngModel">
+    </div>
+  
+    <div class="inputField">
+      <label for="userPassword">Password</label>
+      <label class="errorMessage" *ngIf="passwordInput.errors && passwordInput.errors.required && passwordInput.dirty">
+        Password cant be empty
+      </label>
+      <label class="errorMessage" *ngIf="passwordInput.errors && passwordInput.errors.minlength">
+        More than 3 symbols required
+      </label>
+      <input 
+        type="password" 
+        name="Password"
+        [(ngModel)] = "user.password"
+        required
+        minlength="3"
+        #passwordInput="ngModel">
+    </div>
+
+    <input type="submit" value="Register" class="submitButton" >
+  
+  </form>

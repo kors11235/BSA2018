@@ -1,0 +1,169 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+::-webkit-scrollbar {
+	width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,0.1); 
+}
+#myModal {
+	display: block!important;
+}
+.wrp {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	width: 80%;
+	left: 50%;
+	margin-left: -40%;
+}
+.users {
+	max-height: 600px;
+	overflow: auto;
+	padding: 0!important;
+	align-self: stretch;
+}
+#userHeader {
+	margin: 0!important;
+}
+#users-container {
+	padding: 0;
+}
+.user-box {
+	padding: 10px;
+	border-bottom: 1px solid #555;
+	color: #fff;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.user-box>div {
+	grid-column: 1/3;
+}
+.messages {
+	max-height: 600px;
+	display: grid;
+	grid-row-gap: 15px;
+	align-content: end;
+}
+.messages-wrp {
+	max-height: 500px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	overflow: auto;
+	padding: 0 10px;
+	padding-top: 40px;
+}
+.message-box {
+	margin: 3px 0;
+	width: 90%;
+	position: relative;
+	min-height: 40px;
+	grid-column: 1/2;
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+.message-box>span, .user-box>span {
+	justify-self: end;
+	opacity: 0.5;
+}
+.user-box>span {
+	opacity: 1;
+}
+.msg {
+	margin: 0!important;
+	grid-column: 1/3;
+}
+.toright {
+	grid-column: 1/3;
+	justify-self: end;
+	width: 50%;
+}
+.toright .msg {
+	margin: 0;
+}
+.loggedout-msg {
+	grid-column: 1/3;
+	width: 100%;
+}
+.messages-wrt {
+	margin: 0 20px;
+	height: 40px;
+	position: relative;
+	bottom: -10px;
+}
+.send-form {
+	display: grid;
+	grid-template-columns: 90% 10%;
+	padding: 0 10px;
+}
+textarea {
+	height: 60px!important;
+	border-radius: 5px 0 0 5px!important;
+}
+#textSubmit {
+	border-radius: 0 5px 5px 0!important;
+	color: #fff;
+}
+#nameButton {
+	color: #fff;
+}
+
+
+.bot-info-modal {
+	display: none;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.bot-info-modal .bot-help {
+	position: absolute;
+	width: 100%;
+	padding: 20px;
+	padding-left: 100px;
+	overflow: auto;
+	max-height: 600px;
+	background-color: #eee;
+	z-index: 10;
+}
+
+.bot-info-modal .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 20;
+}
+
+.bot-info {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 50;
+}
+
+.bot-info img {
+	width: 150px;
+	transition: 0.4s ease;
+	cursor: pointer;
+}
+
+.bot-info img:hover {
+	filter: brightness(120%);
+}

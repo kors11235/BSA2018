@@ -1,0 +1,25 @@
+<form class="inputForm" (submit)=loginUser($event)>
+
+  <div class="signin-signup">
+    <a routerLink="/login" class="active">Sign in</a>
+    <a routerLink="/register" class="">Sign Up</a>
+  </div>
+
+  <h2>Log in</h2>
+
+  <div class="inputField">
+    <label for="userName">Email</label>
+    <input type="text" name="userName">
+  </div>
+
+  <div class="inputField">
+    <label for="userPassword">Password</label>
+    <input type="password" name="userPassword">
+  </div>
+
+  <div class="inputSubmit">
+    <a (click)="forgotPassword()" class="forgotPassword">Forgot password?</a>
+    <input type="submit" value="Login" class="submitButton">
+  </div>
+
+</form>

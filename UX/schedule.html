@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Work Shedule</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/wickedpicker.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<!-- ..................... PRELOADER .............................. -->
+	<div id="preloader" class="preloader">
+	 	<div class="preloader__img"><i class="fas fa-spinner"></i></div>
+	</div>
+
+	<header>
+		<div class="logo">
+			Princeton-Plainsboro Hospital
+		</div>
+		<div class="social">
+			<i class="fas fa-phone"></i> +7654321349 <span>|</span>
+			<i class="fas fa-envelope"></i>
+			prplainsboro@mail.ru
+		</div>
+		<h1>Work Shedule For Hospital Stuff</h1>
+		<!-- <button>Identify yourself</button> -->
+
+	</header><!-- /header -->
+	<div class="days">
+		<h2>Select day:</h2>
+		<div><a href="#day_mon"><img id="mon" src="img/days/mon.svg" alt=""></a></div>
+		<div><a href="#day_tu"><img id="tu" src="img/days/tu.svg" alt=""></a></div>
+		<div><a href="#day_wed"><img id="wed" src="img/days/wed.svg" alt=""></a></div>
+		<div><a href="#day_th"><img id="th" src="img/days/th.svg" alt=""></a></div>
+		<div><a href="#day_fri"><img id="fri" src="img/days/fri.svg" alt=""></a></div>
+		<div><a href="#day_sat"><img id="sat" src="img/days/sat.svg" alt=""></a></div>
+		<div><a href="#day_sun"><img id="sun" src="img/days/sun.svg" alt=""></a></div>
+	</div>
+	<div class="schedule_select" id="schedule_select">
+		
+		<div class="day mon" id="day_mon"></div>
+		<div class="day tu" id="day_tu"></div>
+		<div class="day wed" id="day_wed"></div>
+		<div class="day th" id="day_th"></div>
+		<div class="day fri" id="day_fri"></div>
+		<div class="day sat" id="day_sat"></div>
+		<div class="day sun" id="day_sun"></div>
+		
+		
+	</div>
+	<div class="save" id="save_btn"><button>Save</button></div>
+	
+	<div class="overlay"></div>
+	<div class="schedule_comfirm">
+		<div class="close"></div>
+		<h2>Your Schedule</h2>
+		<div class="day mon"></div>
+		<div class="day tu"></div>
+		<div class="day wed"></div>
+		<div class="day th"></div>
+		<div class="day fri"></div>
+		<div class="day sat"></div>
+		<div class="day sun"></div>
+		<div class="btns">
+			<button id="confirm_schedule_btn">Confirm</button>
+			<button id="change_schedule_btn">Change</button>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/wickedpicker.js"></script>
+	<script src="js/js.js"></script>
+	<script>
+
+			
+		</script>
+</body>
+</html>

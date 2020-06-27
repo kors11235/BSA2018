@@ -1,0 +1,97 @@
+.allUsersWrp {
+	background: #222;
+	padding-bottom: 20px;
+	min-height: 600px;
+}
+
+.allUsers {
+	background: #fff;
+	display: grid;
+	padding: 20px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	justify-items: end;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.user {
+	border: 0.5px solid #333;
+	padding: 10px;
+	width: 100%;
+	cursor: pointer;
+	transition: 0.4s ease;
+}
+
+.user:hover {
+	background-color: #eee;
+	border: 0.5px solid #eee;
+}
+
+.user:hover h3 {
+	border-bottom: 4px solid rgb(145, 163, 252);
+}
+
+.user:nth-child(2n) {
+	justify-self: start;
+}
+
+.user h3 {
+	color: rgb(28, 34, 66);
+	border-bottom: 4px solid rgb(98, 114, 199);
+}
+
+.search {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.search button {
+	border-radius: 0;
+}
+
+.search button i, .sort button i {
+	color: #fff;
+}
+
+.search input {
+	border-radius: 0;
+	width: 70%;
+	max-width: 400px;
+	padding: 0 5px;
+}
+
+.sort {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	padding: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.sort h3 {
+	grid-column: 1/3;
+	color: #fff;
+	text-align: center;
+}
+
+.sort button {
+	width: 100%;
+}
+
+.sort button:hover {
+	background: rgb(61, 76, 163);
+}
+
+.sort button i {
+	margin: 0 5px;
+	font-size: 20px;
+	transition: 0.4s ease;
+}
+
+.sort button i:hover {
+	transform: scale(1.1);
+	color: #ccc;
+}

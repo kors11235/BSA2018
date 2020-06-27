@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<title>Chat</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="modal bg-dark" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+					
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Fill next fields:</h4>
+				</div>
+					
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="input-group mb-3">
+						<!-- <div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-smile"></i></span>
+						</div> -->
+						<input type="text" class="form-control" placeholder="Name" pattern="[a-zA-Z]{5,}" title="Minimum 5 letters" required id="nameInput">
+					</div>
+					
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-at"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Nickname" id="nicknameInput">
+					</div>
+				</div>
+					
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button id="login_btn" type="button" class="btn btn-warning" data-dismiss="modal">Submit</button>
+				</div>
+					
+			</div>
+		</div>
+	</div>
+
+	<div class="wrp shadow-sm">
+		
+			<div class="users bg-dark">
+					<h3 id='userHeader' class="jumbotron jumbotron-fluid text-center"></h3>
+					<div id="users-container"></div>
+			</div>
+
+			<div class="messages bg-light">
+				<div  id="messages-container" class="messages-wrp"></div>
+				<div id="writing-msg" class="messages-wrt text-muted"></div>
+				<div class="send-form">
+						<textarea class="form-control" rows="5" id="text" name="text" placeholder="Your message"></textarea>
+						<button type="submit" class="btn btn-warning" id="textSubmit">Send <i class="fas fa-chevron-right"></i></button>
+					</div>
+			</div>
+
+	</div>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src='script.js'></script>
+
+
+</html>

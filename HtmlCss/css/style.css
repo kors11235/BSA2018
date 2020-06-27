@@ -1,0 +1,392 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+body {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 1px 116px 0 #D8DBE2, 0 1px 116px 0 #D8DBE2; }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+a {
+  text-decoration: none; }
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  transition: 0.6s ease; }
+
+input {
+  border: none;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.6s ease; }
+
+h2 {
+  font-size: 16pt;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  font-weight: 600; }
+
+h3 {
+  font-size: 12pt;
+  font-weight: 600;
+  margin: 0; }
+
+ul li {
+  list-style: none; }
+
+.help_wrp {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 2%;
+  margin-bottom: 30px; }
+
+header {
+  background-color: #1E232D;
+  position: relative;
+  padding-bottom: 60px; }
+  header svg {
+    position: absolute;
+    bottom: 0; }
+
+.header_wrp {
+  padding: 4%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 34% 50%;
+  grid-template-rows: 50% 50%; }
+
+.logo {
+  grid-row: 1/3;
+  min-height: 100px;
+  font-size: 3.2em;
+  font-weight: 100;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  background: url(../img/logo_img/galaxy-svgrepo-com.svg) no-repeat;
+  background-position: center;
+  background-size: 95px;
+  line-height: 100px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.6s ease; }
+  .logo span {
+    font-weight: 700; }
+  .logo img.logo_galaxy {
+    width: 2em;
+    position: absolute;
+    left: 50%;
+    margin-left: -1em;
+    top: 0;
+    z-index: 10; }
+  .logo img.logo_planet {
+    width: 0.9em;
+    position: relative;
+    bottom: -0.1em;
+    animation: spin 24s linear infinite; }
+
+.logo:hover {
+  background-size: 100px; }
+
+.logo:hover img.logo_planet {
+  animation: spin 4s linear infinite; }
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5em; }
+  .icons i {
+    color: #D8DBE2;
+    margin-left: 15px;
+    transition: 0.6s ease; }
+
+.social {
+  display: flex;
+  align-items: flex-end; }
+  .social i {
+    color: #495060; }
+  .social i:hover {
+    transform: scale(1.1); }
+
+.search {
+  display: flex;
+  position: relative;
+  align-items: flex-end; }
+  .search #search {
+    width: 0;
+    height: 2em;
+    background-color: transparent;
+    border-bottom: 0.5px solid #495060;
+    color: #D8DBE2;
+    margin-left: 60px;
+    border-radius: 10px;
+    transform-origin: 0% 0%;
+    transform: translateX(0px); }
+  .search #search_check {
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    opacity: 0;
+    z-index: 60;
+    cursor: pointer; }
+  .search input:checked ~ button {
+    background-color: transparent; }
+  .search input:checked ~ #search {
+    width: 200px;
+    margin-left: 15px;
+    transform: translateX(0); }
+  .search button {
+    margin-left: 30px;
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #58A4B0;
+    border-radius: 5px; }
+    .search button i {
+      margin: 0;
+      font-size: 1.2em; }
+  .search input:focus {
+    border-bottom: 0.5px solid #58A4B0; }
+
+.search:hover button {
+  transform: scale(1.1); }
+
+.search:hover button i {
+  transform: rotate(90deg); }
+
+nav a {
+  color: #D8DBE2;
+  margin-left: 1em;
+  transition: 0.6s ease; }
+nav a:hover {
+  color: #58A4B0; }
+nav span, nav input[type='checkbox'] {
+  display: none; }
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 0; }
+
+main {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4%; }
+
+.content {
+  width: 70%;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: repeat(auto-fill, calc(50% - 5px));
+  justify-content: space-between; }
+
+.article {
+  max-width: 350px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 6px 0 rgba(0, 0, 0, 0.05);
+  position: relative; }
+  .article .article_img {
+    overflow: hidden; }
+  .article .article_text {
+    padding: 2%;
+    padding-bottom: 25px; }
+  .article img {
+    width: 100%;
+    height: 200px;
+    transition: 0.6s ease; }
+  .article h1 {
+    font-size: 1.2em;
+    font-weight: 600; }
+    .article h1 a {
+      color: #1E232D;
+      transition: 0.6s ease; }
+    .article h1 a:hover {
+      color: #495060; }
+  .article .date,
+  .article .article_extr {
+    font-size: 0.8em;
+    color: #8B9AAB; }
+  .article .article_extr {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 2%;
+    width: 96%; }
+  .article .rate:after {
+    font-family: "Font Awesome 5 Free";
+    content: ""; }
+
+.article:hover img {
+  transform: scale(1.2); }
+
+aside {
+  width: calc(30% - 10px);
+  border-left: 0px solid #D8DBE2;
+  margin-left: 10px;
+  background: linear-gradient(to top, #fff, #E6E8EC, #fff); }
+  aside input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #8B9AAB;
+    font-weight: 300; }
+  aside input {
+    width: 100%;
+    border-bottom: 0.5px solid #8B9AAB;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 2%;
+    background: transparent; }
+
+.author img {
+  width: 75px;
+  height: 65px;
+  margin-right: 20px;
+  float: left; }
+.author .help_wrp {
+  justify-content: space-between; }
+.author h3 {
+  width: calc(100% - 95px); }
+  .author h3 span {
+    font-size: 10pt;
+    color: #8B9AAB;
+    font-weight: 300;
+    word-break: break-all; }
+.author p {
+  font-style: italic;
+  font-weight: 400;
+  text-align: justify;
+  width: 100%;
+  color: #495060;
+  margin: 0; }
+
+.social_aside .help_wrp {
+  justify-content: center; }
+.social_aside .social {
+  font-size: 1.8em; }
+  .social_aside .social i {
+    color: #495060;
+    margin: 0 8px;
+    transition: 0.6s ease; }
+  .social_aside .social i:hover {
+    color: #58A4B0; }
+
+.subscribe button {
+  width: 100%;
+  background-color: #58A4B0;
+  margin-top: 10px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 10px; }
+.subscribe input:focus {
+  border-bottom: 0.5px solid #495060; }
+.subscribe button:hover {
+  transform: scale(1.01);
+  background-color: #495060; }
+
+.search_aside button {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  position: absolute;
+  right: 2%;
+  border-radius: 0 10px 10px 0; }
+  .search_aside button i {
+    transition: 0.6s ease;
+    color: #fff; }
+.search_aside button:hover {
+  transform: none;
+  background-color: transparent; }
+.search_aside button:hover i {
+  color: #1E232D; }
+.search_aside input {
+  margin: 0;
+  display: block;
+  width: 100%;
+  color: #1E232D; }
+.search_aside .help_wrp {
+  position: relative;
+  align-items: flex-end; }
+
+.tags .help_wrp {
+  justify-content: center;
+  padding: 0; }
+.tags span {
+  background-color: #58A4B0;
+  padding: 10px 5px;
+  border-radius: 10px;
+  margin: 3px;
+  transition: 0.6s ease;
+  cursor: pointer; }
+.tags a {
+  color: #fff; }
+.tags span:hover {
+  background-color: #495060; }
+
+.comment {
+  display: grid;
+  grid-template-columns: 65px calc(100% - 75px);
+  grid-gap: 10px;
+  cursor: pointer;
+  padding: 2%;
+  transition: 0.6s ease; }
+  .comment .comment_photo {
+    width: 65px;
+    height: 65px;
+    background-color: #D8DBE2;
+    border-radius: 50%; }
+  .comment img {
+    width: 65px;
+    height: 65px; }
+  .comment h3 {
+    color: #495060; }
+  .comment p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.comment:hover {
+  background-color: #495060;
+  color: #fff; }
+
+.comment:hover h3 {
+  color: #fff; }
+
+footer {
+  background-color: #1E232D;
+  position: relative;
+  padding-top: 60px; }
+  footer svg {
+    position: absolute;
+    top: 0;
+    transform: scale(-1, -1);
+    top: -1px; }
+  footer .logo {
+    transform: scale(0.6); }
+  footer .cpr {
+    text-align: center;
+    color: #495060;
+    padding: 20px 0; }
+  footer .info {
+    padding: 0 8%;
+    color: #fff;
+    font-weight: 100;
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
